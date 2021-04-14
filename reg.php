@@ -16,7 +16,7 @@ if(session('discordId')&&session('refToken')){
 	if ($result = $conn->query("SHOW TABLES LIKE 'REGUSER'")) {
 		if($result->num_rows != 1) {//Table not exist, create table
 			echo 'CREATE table';
-			$sqlQ = "CREATE TABLE REGUSER (DiscordID VARCHAR(20) NOT NULL, RefToken VARCHAR(150) NOT NULL, PRIMARY KEY (DiscordID))";
+			$sqlQ = "CREATE TABLE REGUSER (DiscordID VARCHAR(20) NOT NULL, RefToken VARCHAR(150) NOT NULL,Verify BOOLEAN,TS TIMESTAMP, PRIMARY KEY (DiscordID))";
 			if($conn->query($sqlQ) !== TRUE){
 				exit();
 			}
