@@ -4,7 +4,7 @@ services:
     build: ./docker
     restart: unless-stopped
     volumes:
-      - ./web:/var/www/html/
+      - ./web:/var/www/html/yue
     ports:
       - "80:80"
       - "443:443"

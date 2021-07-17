@@ -2,9 +2,10 @@
 ini_set("session.use_trans_sid",1);
 ini_set("session.use_only_cookies",0);
 ini_set("session.use_cookies",1);
+ini_set('display_errors', 0);
 
 session_start();
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 // 0) 
 $client = new Google_Client;
@@ -13,7 +14,7 @@ $client->setClientSecret("Google OAuth2.0 Client KEY");//Need edit
 $client->setAccessType('offline');
 $client->setApprovalPrompt('force');
 
-$hostname = "https://YOUR.DOMAIN/auth.php";//Need edit
+$hostname = "https://YOUR.DOMAIN/yue/auth.php";//Need edit
 
 // 2) 
 if (isset($_GET['code']))
@@ -32,7 +33,7 @@ if (isset($_GET['code']))
 		//print($token[access_token]);
 		//print("\n")
 		//print($token[refresh_token]);
-		$_SESSION['refToken'] = $token[refresh_token];
+		$_SESSION['refToken'] = $token['refresh_token'];
 		//print("\n")
 		//print($_SESSION['discordId']);
     }

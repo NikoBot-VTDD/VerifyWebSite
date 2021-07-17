@@ -2,9 +2,10 @@
 ini_set("session.use_trans_sid",1);
 ini_set("session.use_only_cookies",0);
 ini_set("session.use_cookies",1);
+
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
 ini_set('max_execution_time', 300); //300 seconds = 5 minutes. In case if your CURL is slow and is loading too much (Can be IPv6 problem)
 
 error_reporting(E_ALL);
@@ -22,7 +23,6 @@ if(get('action') == 'login') {
 
   $params = array(
     'client_id' => OAUTH2_CLIENT_ID,
-    //'redirect_uri' => 'https://yoursite.location/ifyouneedit',
     'response_type' => 'code',
     'scope' => 'identify email'
   );

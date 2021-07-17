@@ -16,7 +16,7 @@ RUN cd /var/www/html
 WORKDIR /var/www/html
 
 RUN composer require google/apiclient
-
+RUN mkdir yue
 RUN chmod 755 -R /var/www/html
 
 COPY tls/ca.crt /etc/apache2/ssl/ca.crt
