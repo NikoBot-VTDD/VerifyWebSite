@@ -22,7 +22,7 @@ RUN chmod 755 -R /var/www/html
 COPY tls/ca.crt /etc/apache2/ssl/ca.crt
 COPY tls/ca.crt /etc/apache2/ssl/cloudflare.crt
 COPY tls/ca.key /etc/apache2/ssl/ca.key
-COPY conf/vtdd.skunion.org.conf /etc/apache2/sites-enabled/vtdd.skunion.org.conf
+COPY conf/YOUR.DOMAIN.conf /etc/apache2/sites-enabled/YOUR.DOMAIN.conf
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql zip mbstring
 

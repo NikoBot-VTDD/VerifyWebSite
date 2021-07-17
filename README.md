@@ -50,7 +50,8 @@ SSLCertificateFile "/etc/apache2/ssl/ca.crt"
 SSLCertificateKeyFile "/etc/apache2/ssl/ca.key"
 SSLCACertificateFile "/etc/apache2/ssl/CAName.crt"
 </VirtualHost>
-```
+```  
+Edit file name to your domain in docker/Dockerfile line 25  
 
 ## Installation
 - Install docker and docker-compose
