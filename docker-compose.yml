@@ -1,0 +1,14 @@
+version: '2'
+services:
+  vtddweb:
+    build: ./docker
+    restart: unless-stopped
+    volumes:
+      - ./web:/var/www/html/
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      red:
+networks:
+  red:
